@@ -1,12 +1,15 @@
 <template>
     <main class="app">
 
-        <div class="container2"><section class="greeting">
+        <div class="container2">
+            <section class="greeting">
             <br><br>
             <h2 class="title">
                 <center>To Do List</center>
             </h2>
-        </section>
+            <img src="../page3/백경이홧팅.png" id="fighting1">
+            <img src="../page3/백경이홧팅.png" id="fighting2">
+            </section>
 
             <form id="new-todo-form" @submit.prevent="addTodo">
                 <h4 id="title-two"><center>오늘 랩실에서 할 일을 입력해 주세요!</center></h4>
@@ -23,7 +26,7 @@
             </form>
 
 
-                <div v-for="todo in todos_asc" v-bind:key="`todo-item ${todo.done && 'done'}`">
+                <div class= "todo-container" v-for="todo in todos_asc" v-bind:key="`todo-item ${todo.done && 'done'}`">
                     <label>
                         <input id="checkbox" type="checkbox" v-model="todo.done"/>
                         <span
@@ -42,7 +45,7 @@
                         <button class="delete" @click="removeTodo(todo)">Delete</button>
                     </div>
                 </div>
-                </div>
+        </div>
 
     </main>
 </template>
@@ -93,12 +96,16 @@
 
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+.todo-container {
+    width:700;
+    height: 60px;
+}
 
 
 .title {
     font-size:50px;
     font-family: 'Do Hyeon', sans-serif;
-    color:rgb(40, 92, 197)
+    color:rgb(40, 92, 197);
 }
 
 #title-two {
@@ -156,7 +163,33 @@
     border-radius: 5px;
     background-color:rgb(125, 125, 255);
     position:relative;
-        left:565px;
-        bottom: 96px;
+    left:565px;
+    bottom: 96px;
+}
+
+#fighting1 {
+    width:100px;
+    height: 125px;
+    position:relative;
+    left: 120px;
+    bottom: 100px;
+}
+
+#fighting2 {
+    width:100px;
+    height: 125px;
+    position:relative;
+    left: 385px;
+    bottom: 100px;
+}
+
+.greeting {
+    width: 700px;
+    height: 100px;
+}
+
+.app {
+    width:530px;
+    height:280px;
 }
 </style>

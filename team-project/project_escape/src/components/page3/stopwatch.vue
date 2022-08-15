@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+export default {
         name: "App",
         data() {
             return {elapsedTime: 0, timer: undefined};
@@ -25,15 +25,18 @@
         },
         methods: {
             start() {
-                this.timer = setInterval(() => {
-                    this.elapsedTime += 1000;
-                }, 1000);
+                // 인터벌이 이미 실행 중인지 확인
+                if (!this.timer) {
+                    this.timer = setInterval(() => {
+                        this.elapsedTime += 1000;
+                    }, 1000);
+                }
             },
             stop() {
-                clearInterval(this.timer);
-            },
-            reset() {
-                this.elapsedTime = 0;
+                if (this.timer) {
+                    clearInterval(this.timer)
+                    this.timer = undefined;
+                }
             }
         }
     };
@@ -45,23 +48,22 @@
 p {
     font-size: 65px;
     font-weight: 600;
-    color: rgb(74, 135, 255);
+    color: rgb(40, 92, 197);
     position: absolute;
-    left: 50px;
-    top: 55px;
+    left: 10px;
+    bottom: 585px;
 }
 
 #in {
     border: 0;
     outline: 0;
     background-color: white;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 35px;
+    font-weight: 550;
     color: rgb(144, 181, 255);
     position: absolute;
-    position: absolute;
-    left: 325px;
-    top: 220px;
+    left: 60px;
+    top: 100px;
     font-family: 'Do Hyeon', sans-serif;
 }
 
@@ -69,12 +71,12 @@ p {
     border: 0;
     outline: 0;
     background-color: white;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 35px;
+    font-weight: 550;
     color: rgb(144, 181, 255);
     position: absolute;
-    left: 420px;
-    top: 220px;
+    left: 150px;
+    top: 100px;
     font-family: 'Do Hyeon', sans-serif;
 }
 

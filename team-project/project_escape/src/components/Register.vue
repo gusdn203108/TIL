@@ -128,6 +128,7 @@
     position: relative;
     right:18px;
     top:25px;
+    text-shadow: 2px 2px 2px rgb(144, 192, 255); 
 }
 
 div {

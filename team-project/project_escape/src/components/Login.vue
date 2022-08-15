@@ -13,9 +13,9 @@ v-model="state.form.loginId" /> </label> <label for="loginPw"> <span>패스워�
                 <div v-if="state.account.id">
                     <center><p id="greeting">안녕하세요? {{ state.account.lab }}교수님 연구실 소속, {{ state.account.name }}학생님!
                     </p></center>
-                    <center><router-link to="/home" id="router">출퇴근 기록</router-link></center>
+                    <center><router-link to="/home" id="router"><strong>My Page</strong></router-link></center>
                     <br><br>
-                    <center>``<button id="logout" @click="logout()">로그아웃</button></center>
+                    <center>``<button id="logout" @click="logout()">Log Out</button></center>
 
                 </div>
                 <div v-else>
@@ -120,23 +120,32 @@ template {
 }
 
 #logout {
-    color:white;
-    background-color:rgb(125, 125, 255);
-    border:none;
+    color:skyblue;
+    background-color:rgb(255, 255, 255);
+    border: 3px solid skyblue;
     height: 50px;
     width:140px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
+    position: absolute;
+    top:640px;
+    right: 500px;
 }
 
 #greeting {
     font-family: 'Do Hyeon', sans-serif;
     font-size: 30px;
+    position: absoulte;
+    top:480px;
+    right: 10px;
 }
 
 #router {
     font-family: 'Do Hyeon', sans-serif;
     font-size:30px;
+    position: absolute;
+    top:560px;
+    right:520px;
 }
 </style>
